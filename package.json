@@ -13,7 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/mabvmex/rest-to-graph.git"
   },
-  "keywords": ["ergast", "api-rest-to-graphql", "graphql", "rest-data-source"],
+  "keywords": [
+    "ergast",
+    "api-rest-to-graphql",
+    "graphql",
+    "rest-data-source"
+  ],
   "author": "Miguel Barrera <mabvmex@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -21,6 +26,7 @@
   },
   "homepage": "https://github.com/mabvmex/rest-to-graph#readme",
   "dependencies": {
+    "apollo-datasource-rest": "^0.9.3",
     "apollo-server-express": "^2.6.1",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
@@ -33,6 +39,7 @@
     "graphql-tools": "^4.0.4",
     "http": "0.0.0",
     "ncp": "^2.0.0",
+    "tslint": "^6.1.2",
     "typescript": "^3.5.1"
   },
   "devDependencies": {

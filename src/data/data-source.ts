@@ -1,4 +1,4 @@
-import { RESTDataSource } from 'apollo-server-express';
+import { RESTDataSource  } from 'apollo-datasource-rest'
 
 export class F1 extends RESTDataSource {
   constructor() {
