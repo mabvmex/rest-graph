@@ -8,6 +8,7 @@ import { createServer } from 'http';
 import expressPlayGround from 'graphql-playground-middleware-express';
 import { dataSources } from './data';
 
+
 async function init() {
     // Inicializamos la aplicación express
     const app = express();
@@ -22,6 +23,7 @@ async function init() {
         introspection: true, // Nece∏sario
         dataSources: () => ({
             seasons: new dataSources.SeasonsData(),
+            races: new dataSources.RacesData()
         }),
     });
 
