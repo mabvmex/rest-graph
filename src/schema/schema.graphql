@@ -20,19 +20,23 @@ type Query {
   historyDrivers(pageElements: Int, page: Int): [Driver!]!
   
   """
-  Obtenemos la Información de los pilotos seleccionadas por año.
+  Obtenemos la información de los pilotos seleccionadas por año.
   Tener en cuenta que solo existen temporadas desde la 1950 a 2020 (y contado)
   """
   driversYear(year: String!): [Driver!]!
   
   """
-  Obtenemos la Información de los pilotos seleccionadas por año y número de carrera.
+  Obtenemos la información de los pilotos seleccionadas por año y número de carrera.
   Tener en cuenta que solo existen temporadas desde la 1950 a 2020 (y contado)
   """
   driversYearAndRound(year: String!, round: Int!): [Driver!]!
 
-  "Obtenemos la Información del piloto mediante su valor ID."
+  "Obtenemos la información del piloto mediante su valor ID."
   driverSelect(id: String!): Driver
+
+# PRACTICA DE CLASIFICACION
+  "Obtenemos la clasificación del piloto."
+  driverStanding(year: String!): [DriverStanding!]!
 }
 
 "Información de la temporada"
@@ -137,4 +141,21 @@ type Driver {
   
   "Número del piloto"
   permanentNumber: String
+}
+
+type DriverStanding {
+  position: String!
+  positionText: String!
+  points: String!
+  wins: String!
+  driver: Driver!
+  constructors: [Constructor!]!
+}
+
+type Constructor {
+  id: String!
+  url: String!
+  urlMobile: String!
+  name: String!
+  nationality: String!
 }
