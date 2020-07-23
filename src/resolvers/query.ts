@@ -34,9 +34,18 @@ const query: IResolvers = {
     async driverStanding(_: void, {year}, {dataSources}) {
         return await dataSources.drivers.getDriverStanding(year)
         .then((data:any) => data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
-    
-    }
+    },
+    async historyCircuitos(_: void, {pageElements, page}, {dataSources}) {
+        return await dataSources.circuits.getCircuits(pageElements, page)
+        .then((data:any) => data.MRData.CircuitTable.Circuits); 
+    },
+    async circuitSelect(_: void, { id }, { dataSources }) {
+      return await dataSources.circuits.getCircuit(id)
+        .then((data: any) => data.MRData.CircuitTable.Circuits[0]);
+    },
   }
 };
 
 export default query;
+
+

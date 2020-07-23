@@ -18,3 +18,12 @@ export function checkRound(round: number) {
     }
     return round;
 }
+
+
+export function paginationOption(pageElements: number = -1, page: number = 1) {
+    
+    const offset = (page - 1) * pageElements;
+    const limit = pageElements;
+    return `limit=${limit}&offset=${offset}`;
+    
+}

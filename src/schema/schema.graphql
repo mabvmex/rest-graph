@@ -37,8 +37,19 @@ type Query {
 # PRACTICA DE CLASIFICACION
   "Obtenemos la clasificación del piloto."
   driverStanding(year: String!): [DriverStanding!]!
+
+# PRACTICA DE CLASIFICACION
+"Obtenemos la lista de circuitos del piloto."
+historyCircuitos (pageElements: Int, page: Int): [Circuit!]!
+
+"Circuito seleccionado"
+circuitSelect(id: String!): Circuit
+
 }
 
+
+
+# Tipos de Objetos
 "Información de la temporada"
 type Season {
 
